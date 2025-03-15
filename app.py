@@ -2,9 +2,14 @@
 
 # импорт модуля Flask, который вы ранее установили с помощью
 # pip install Flask==2.2.2 "connexion[swagger-ui]==2.14.1"
-from flask import Flask, render_template
+from flask import render_template
+import connexion
 
-app = Flask(__name__)
+# создание экземпляра приложения с использованием Connexion, а не Flask
+# Внутри приложение Flask все еще создается, но теперь к нему добавлены
+# дополнительные функции.
+app = connexion.App(__name__, specification_dir="./")
+app.add_api("swagger.yml")
 
 @app.route("/") # декоратор функции для "/" (корневого URL веб-приложения)
 def home():
