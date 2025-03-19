@@ -17,4 +17,4 @@ def home():
 
 if __name__ == "__main__":
     # основной вызов приложения с указанием хоста и порта
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="0.0.0.0", port=8000)
