@@ -2,3 +2,5 @@ venv/
 _pycache_
 flaska
 __pycache__/
+.venv
+.idea/
